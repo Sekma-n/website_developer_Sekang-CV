@@ -112,6 +112,17 @@
             font-weight: bold;
         }
 
+        /* Sidebar Links */
+        .sidebar ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .sidebar ul li a:hover {
+            color: #e67e22;
+            text-decoration: underline;
+        }
+
         /* Main Content Column */
         .main-content {
             width: 65%;
@@ -182,6 +193,10 @@
             color: #e67e22;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
+        }
+        .project-link:hover {
+            text-decoration: underline;
         }
         .project-desc {
             font-size: 14px;
@@ -255,6 +270,13 @@
                 <p><span>🌐</span> obriangroup.com</p>
                 <p><span>📍</span> 1942 Tladi Seduku Street Soweto, Johannesburg, South Africa</p>
             </div>
+
+            <h3>Portfolio Links</h3>
+            <ul>
+                <li><a href="https://sekma-n.github.io/sekang_Portfolio-website/Home.html" target="_blank">Portfolio Website</a></li>
+                <li><a href="https://sekma-n.github.io/sekang-dev_Work_projects/Work.html" target="_blank">Work Projects</a></li>
+                <li><a href="https://sekma-n.github.io/-New_porfolio/" target="_blank">New Portfolio</a></li>
+            </ul>
 
             <h3>Skills</h3>
             <ul>
@@ -334,16 +356,27 @@
             </div>
 
             <h3>Key Projects & Achievements</h3>
+            
+            <!-- Added New Portfolio Links here -->
             <div class="project">
-                <div class="project-title">O'Brian Group <a href="https://obriangroup.com" class="project-link">(obriangroup.com)</a></div>
+                <div class="project-title">My Online Portfolios</div>
+                <div class="project-desc" style="margin-bottom: 10px;">
+                    <a href="https://sekma-n.github.io/sekang_Portfolio-website/Home.html" class="project-link" target="_blank">Portfolio Website</a> &nbsp;|&nbsp; 
+                    <a href="https://sekma-n.github.io/sekang-dev_Work_projects/Work.html" class="project-link" target="_blank">Work Projects</a> &nbsp;|&nbsp; 
+                    <a href="https://sekma-n.github.io/-New_porfolio/" class="project-link" target="_blank">New Portfolio</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">O'Brian Group <a href="https://obriangroup.com" class="project-link" target="_blank">(obriangroup.com)</a></div>
                 <div class="project-desc">Developed a responsive e-commerce website for a retail client that improved their conversion rates by 15%. Technologies used: HTML, CSS, JavaScript.</div>
             </div>
             <div class="project">
-                <div class="project-title">PNT Psychologist <a href="https://pntpsychologist.co.za" class="project-link">(pntpsychologist.co.za)</a></div>
+                <div class="project-title">PNT Psychologist <a href="https://pntpsychologist.co.za" class="project-link" target="_blank">(pntpsychologist.co.za)</a></div>
                 <div class="project-desc">Created an interactive portfolio website to showcase skills, which has been visited by over 1,000 potential clients in the past 6 months.</div>
             </div>
             <div class="project">
-                <div class="project-title">Uthando Beauty <a href="https://uthandobeauty.com" class="project-link">(uthandobeauty.com)</a></div>
+                <div class="project-title">Uthando Beauty <a href="https://uthandobeauty.com" class="project-link" target="_blank">(uthandobeauty.com)</a></div>
                 <div class="project-desc">Built a mobile-responsive blog platform that increased engagement through enhanced UX and seamless design.</div>
             </div>
 
