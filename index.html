@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekang Segotso - UI/UX Designer Resume</title>
+    <style>
+        /* General Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        /* Print Button */
+        .print-btn {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 12px 24px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+        .print-btn:hover {
+            background-color: #004494;
+        }
+
+        /* Resume Container */
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Left Column (Sidebar) */
+        .sidebar {
+            width: 35%;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 20px;
+        }
+        .sidebar h1 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .sidebar h2 {
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            color: #bdc3c7;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .sidebar h3 {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #e67e22;
+        }
+        
+        /* Contact Info */
+        .contact-info p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            word-break: break-all;
+        }
+        .contact-info p span {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        /* Lists */
+        .sidebar ul {
+            list-style-type: none;
+        }
+        .sidebar ul li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+        .sidebar ul li::before {
+            content: "•";
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Main Content Column */
+        .main-content {
+            width: 65%;
+            padding: 30px;
+            background-color: #fff;
+        }
+        .main-content h3 {
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #2c3e50;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .main-content h3:first-child {
+            margin-top: 0;
+        }
+        
+        /* Profile Summary */
+        .profile-summary {
+            font-size: 15px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        /* Experience & Education Items */
+        .job, .edu-item {
+            margin-bottom: 20px;
+        }
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .job-title, .edu-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        .job-company, .edu-school {
+            font-size: 15px;
+            color: #e67e22;
+            font-weight: 600;
+        }
+        .job-date, .edu-date {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .job-desc {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Projects Section */
+        .project {
+            margin-bottom: 15px;
+        }
+        .project-title {
+            font-weight: bold;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+        .project-link {
+            color: #e67e22;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .project-desc {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Cover Letter / Memo Section */
+        .memo {
+            background-color: #f9f9f9;
+            border-left: 4px solid #e67e22;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #444;
+        }
+        .memo p {
+            margin-bottom: 10px;
+        }
+
+        /* Print Media Query */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .print-btn {
+                display: none; /* Hides the button when printing */
+            }
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .sidebar {
+                background-color: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .sidebar, .main-content {
+                width: 100%;
+            }
+            .sidebar {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Requested Print Button -->
+    <button class="print-btn" type="button" onclick="window.print()">
+      Print / Save as PDF
+    </button>
+
+    <!-- Resume Container -->
+    <div class="resume-container">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h1>Sekang</h1>
+            <h1>Segotso</h1>
+            <h2>UI/UX Designer</h2>
+
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <p><span>📞</span> +27 61 454 8884</p>
+                <p><span>✉️</span> Sekang@obriangroup.com</p>
+                <p><span>🌐</span> obriangroup.com</p>
+                <p><span>📍</span> 1942 Tladi Seduku Street Soweto, Johannesburg, South Africa</p>
+            </div>
+
+            <h3>Skills</h3>
+            <ul>
+                <li>Adobe After Effects</li>
+                <li>Adobe XD</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Graphic Design</li>
+                <li>Layout Design</li>
+                <li>Icon Design</li>
+                <li>Programming</li>
+            </ul>
+
+            <h3>Languages</h3>
+            <ul>
+                <li>English</li>
+                <li>Sesotho</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <h3>Profile</h3>
+            <p class="profile-summary">
+                I am a UI/UX designer. UX is the process of designing a product through a user approach. Products with good UX design will increase user satisfaction with products.
+            </p>
+
+            <h3>Experience</h3>
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">UI/UX Designer</span>
+                    <span class="job-date">2016 - 2021</span>
+                </div>
+                <div class="job-company">Sony Studio</div>
+                <div class="job-desc">
+                    Collaborated with the team to solve UI/UX problems on e-commerce sites.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Frontend Developer</span>
+                    <span class="job-date">2017 - Present</span>
+                </div>
+                <div class="job-company">Adobe Studio</div>
+                <div class="job-desc">
+                    Slicing designs and implementing visual and interactive elements.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Graphic Designer</span>
+                    <span class="job-date">2005 - 2009</span>
+                </div>
+                <div class="job-company">O'Brian Digital Studio</div>
+                <div class="job-desc">
+                    Designed numerous marketing campaigns.
+                </div>
+            </div>
+
+            <h3>Education</h3>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span class="edu-title">Visual Communication Design</span>
+                    <span class="edu-date">2001 - 2004</span>
+                </div>
+                <div class="edu-school">Johannesburg University</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span class="edu-title">Multimedia Design</span>
+                    <span class="edu-date">1997 - 2000</span>
+                </div>
+                <div class="edu-school">SANZAF School</div>
+            </div>
+
+            <h3>Key Projects & Achievements</h3>
+            <div class="project">
+                <div class="project-title">O'Brian Group <a href="https://obriangroup.com" class="project-link">(obriangroup.com)</a></div>
+                <div class="project-desc">Developed a responsive e-commerce website for a retail client that improved their conversion rates by 15%. Technologies used: HTML, CSS, JavaScript.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">PNT Psychologist <a href="https://pntpsychologist.co.za" class="project-link">(pntpsychologist.co.za)</a></div>
+                <div class="project-desc">Created an interactive portfolio website to showcase skills, which has been visited by over 1,000 potential clients in the past 6 months.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">Uthando Beauty <a href="https://uthandobeauty.com" class="project-link">(uthandobeauty.com)</a></div>
+                <div class="project-desc">Built a mobile-responsive blog platform that increased engagement through enhanced UX and seamless design.</div>
+            </div>
+
+            <h3>Skills & Technologies</h3>
+            <div class="project">
+                <div class="project-desc">
+                    <strong>Frontend:</strong> HTML, CSS, JavaScript, React, Bootstrap<br>
+                    <strong>Backend:</strong> Node.js, Express, MongoDB<br>
+                    <strong>Design & UX:</strong> Figma, Adobe XD, Responsive Web Design<br>
+                    <strong>Version Control:</strong> Git, GitHub, GitLab
+                </div>
+            </div>
+
+            <!-- Memo / Cover Letter Section from Page 2 -->
+            <div class="memo">
+                <p><strong>Dear Mr/Mrs,</strong></p>
+                <p>I hope this memo finds you well. I am excited to share with you a brief overview of my professional portfolio, which showcases a collection of my work, skills, and accomplishments in the field of web development. This portfolio highlights the projects I've worked on, my technical expertise, and my passion for creating impactful, user-friendly websites.</p>
+                <p>Sincerely,<br>Sekang Segotso</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
